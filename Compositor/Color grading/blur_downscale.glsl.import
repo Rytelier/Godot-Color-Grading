@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://bugiufvjpg41u"
+path="res://.godot/imported/blur_downscale.glsl-514dc0a75f64c7d6c3f3c4e2067386b2.res"
+
+[deps]
+
+source_file="res://Compositor/Color grading/blur_downscale.glsl"
+dest_files=["res://.godot/imported/blur_downscale.glsl-514dc0a75f64c7d6c3f3c4e2067386b2.res"]
+
+[params]
+

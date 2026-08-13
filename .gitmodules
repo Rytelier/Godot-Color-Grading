@@ -1,0 +1,3 @@
+[submodule "Godot-compositor-effect-kit"]
+	path = Godot-compositor-effect-kit
+	url = https://github.com/Rytelier/Godot-compositor-effect-kit

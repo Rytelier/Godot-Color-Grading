@@ -1,0 +1,299 @@
+[gd_scene format=3 uid="uid://xk75le5qaipg"]
+
+[ext_resource type="Script" uid="uid://dg4iaghm5pepr" path="res://addons/Color grading/CG_SMH.gd" id="1_j4qnq"]
+[ext_resource type="Script" uid="uid://c20db34gob5wk" path="res://addons/Color grading/CG_RangesEditor.gd" id="2_rehng"]
+[ext_resource type="Texture2D" uid="uid://bhnosrm4u5bey" path="res://addons/Color grading/Resources/Vibrance.png" id="3_u0jyo"]
+[ext_resource type="Texture2D" uid="uid://lfn5k5agxx6m" path="res://addons/Color grading/Resources/Lightness.png" id="4_l5e8p"]
+
+[sub_resource type="Gradient" id="Gradient_63who"]
+offsets = PackedFloat32Array(0, 0.2, 0.8, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lebqt"]
+gradient = SubResource("Gradient_63who")
+width = 4
+height = 13
+
+[sub_resource type="Gradient" id="Gradient_4752a"]
+offsets = PackedFloat32Array(0, 0.0625, 0.125, 0.1875, 0.25, 0.3125, 0.375, 0.4375, 0.5, 0.5625, 0.625, 0.6875, 0.75, 0.8125, 0.875, 0.9375, 1)
+colors = PackedColorArray(0.8713499, 0, 0.18781021, 1, 0.756299, 0.30910072, 0, 1, 0.6538087, 0.4004457, 7.70092e-07, 1, 0.5710069, 0.45043802, 0, 1, 0.47379375, 0.49312866, 5.7756904e-07, 1, 0.27819774, 0.5447929, 5.7756904e-07, 1, 2.5509298e-06, 0.5561477, 0.33963704, 1, 0, 0.54289615, 0.47565287, 1, 0, 0.5308727, 0.5638541, 1, 5.1018596e-06, 0.51549006, 0.65299314, 1, 0, 0.4832356, 0.79362357, 1, 0.27560267, 0.37422177, 1, 1, 0.51764655, 0.24218449, 1, 1, 0.69402313, 0.002126224, 0.89218295, 1, 0.7889702, 0.00012167454, 0.66447383, 1, 0.7889702, 0.00012167454, 0.66447383, 1, 0.8713499, 0, 0.18781021, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u0jyo"]
+gradient = SubResource("Gradient_4752a")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l5e8p"]
+texture = SubResource("GradientTexture2D_u0jyo")
+expand_margin_top = 6.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="Gradient" id="Gradient_6137w"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_63who"]
+gradient = SubResource("Gradient_6137w")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_td7gm"]
+texture = SubResource("GradientTexture2D_63who")
+expand_margin_top = 6.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="Gradient" id="Gradient_2413h"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x1p35"]
+gradient = SubResource("Gradient_2413h")
+
+[sub_resource type="Gradient" id="Gradient_k8mi8"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bdeb7"]
+gradient = SubResource("Gradient_k8mi8")
+
+[node name="Node2D" type="Control" unique_id=1998139398]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="SMH adjust" type="BoxContainer" parent="." unique_id=1514125618]
+layout_mode = 0
+offset_right = 218.0
+offset_bottom = 81.0
+size_flags_vertical = 3
+vertical = true
+script = ExtResource("1_j4qnq")
+
+[node name="Hue" type="BoxContainer" parent="SMH adjust" unique_id=297031004]
+layout_mode = 2
+
+[node name="SpinBox" type="EditorSpinSlider" parent="SMH adjust/Hue" unique_id=1584908290]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+control_state = 2
+hide_slider = true
+
+[node name="Slider" type="HSlider" parent="SMH adjust/Hue" unique_id=1148002094]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_icons/grabber = SubResource("GradientTexture2D_lebqt")
+theme_override_icons/grabber_highlight = SubResource("GradientTexture2D_lebqt")
+theme_override_styles/slider = SubResource("StyleBoxTexture_l5e8p")
+max_value = 1.0
+step = 0.001
+
+[node name="Tint" type="BoxContainer" parent="SMH adjust" unique_id=1577371582]
+layout_mode = 2
+
+[node name="SpinBox" type="EditorSpinSlider" parent="SMH adjust/Tint" unique_id=1003901408]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+control_state = 2
+hide_slider = true
+
+[node name="Slider" type="HSlider" parent="SMH adjust/Tint" unique_id=1073987999]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_icons/grabber = SubResource("GradientTexture2D_lebqt")
+theme_override_icons/grabber_highlight = SubResource("GradientTexture2D_lebqt")
+theme_override_styles/slider = SubResource("StyleBoxTexture_td7gm")
+max_value = 1.0
+step = 0.001
+
+[node name="BoxContainer" type="BoxContainer" parent="SMH adjust" unique_id=833137140]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="SMH adjust/BoxContainer" unique_id=1961293580]
+layout_mode = 2
+texture = ExtResource("3_u0jyo")
+expand_mode = 3
+
+[node name="Vibrance" type="EditorSpinSlider" parent="SMH adjust/BoxContainer" unique_id=1720103679]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+max_value = 4.0
+step = 0.001
+value = 1.0
+allow_greater = true
+allow_lesser = true
+
+[node name="TextureRect2" type="TextureRect" parent="SMH adjust/BoxContainer" unique_id=1170462253]
+layout_mode = 2
+texture = ExtResource("4_l5e8p")
+expand_mode = 3
+
+[node name="Lightness" type="EditorSpinSlider" parent="SMH adjust/BoxContainer" unique_id=1088640209]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+max_value = 4.0
+step = 0.001
+value = 1.0
+allow_greater = true
+allow_lesser = true
+
+[node name="SMH ranges" type="BoxContainer" parent="." unique_id=932240886]
+layout_mode = 0
+offset_top = 267.0
+offset_right = 309.0
+offset_bottom = 359.0
+vertical = true
+script = ExtResource("2_rehng")
+
+[node name="BoxContainer" type="BoxContainer" parent="SMH ranges" unique_id=493861239]
+layout_mode = 2
+
+[node name="s x" type="EditorSpinSlider" parent="SMH ranges/BoxContainer" unique_id=1327118448]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+control_state = 2
+hide_slider = true
+
+[node name="s y" type="EditorSpinSlider" parent="SMH ranges/BoxContainer" unique_id=1950304523]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+value = 0.2
+control_state = 2
+hide_slider = true
+
+[node name="h x" type="EditorSpinSlider" parent="SMH ranges/BoxContainer" unique_id=673595530]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+value = 0.8
+control_state = 2
+hide_slider = true
+
+[node name="h y" type="EditorSpinSlider" parent="SMH ranges/BoxContainer" unique_id=1142931462]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+value = 1.0
+control_state = 2
+hide_slider = true
+
+[node name="Panel" type="Panel" parent="SMH ranges" unique_id=879296981]
+show_behind_parent = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Visualizer" type="TextureRect" parent="SMH ranges/Panel" unique_id=2007330483]
+self_modulate = Color(1, 1, 1, 0.28235295)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = -4.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = SubResource("GradientTexture2D_x1p35")
+expand_mode = 1
+
+[node name="s x" type="TextureRect" parent="SMH ranges/Panel/Visualizer" unique_id=863030822]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 3.0
+grow_vertical = 2
+mouse_default_cursor_shape = 10
+texture = SubResource("GradientTexture2D_bdeb7")
+expand_mode = 1
+
+[node name="s y" type="TextureRect" parent="SMH ranges/Panel/Visualizer" unique_id=513558630]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 60.2
+offset_right = 63.2
+grow_vertical = 2
+mouse_default_cursor_shape = 10
+texture = SubResource("GradientTexture2D_bdeb7")
+expand_mode = 1
+
+[node name="h x" type="TextureRect" parent="SMH ranges/Panel/Visualizer" unique_id=1955602473]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 240.8
+offset_right = 243.8
+grow_vertical = 2
+mouse_default_cursor_shape = 10
+texture = SubResource("GradientTexture2D_bdeb7")
+expand_mode = 1
+
+[node name="h y" type="TextureRect" parent="SMH ranges/Panel/Visualizer" unique_id=519706586]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 301.0
+offset_right = 304.0
+grow_vertical = 2
+mouse_default_cursor_shape = 10
+texture = SubResource("GradientTexture2D_bdeb7")
+expand_mode = 1
+
+[node name="Vibrance post" type="BoxContainer" parent="." unique_id=693811794]
+layout_mode = 0
+offset_top = 139.0
+offset_right = 304.0
+offset_bottom = 164.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Vibrance post" unique_id=1043849850]
+layout_mode = 2
+text = "S"
+
+[node name="S" type="EditorSpinSlider" parent="Vibrance post" unique_id=379360100]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 4.0
+step = 0.001
+value = 1.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Label2" type="Label" parent="Vibrance post" unique_id=734184907]
+layout_mode = 2
+text = "M"
+
+[node name="M" type="EditorSpinSlider" parent="Vibrance post" unique_id=62593998]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 4.0
+step = 0.001
+value = 1.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Label3" type="Label" parent="Vibrance post" unique_id=2085111270]
+layout_mode = 2
+text = "H"
+
+[node name="H" type="EditorSpinSlider" parent="Vibrance post" unique_id=1860824495]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 4.0
+step = 0.001
+value = 1.0
+allow_greater = true
+allow_lesser = true
